@@ -2,11 +2,12 @@
 using System.Numerics;
 using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Specialized;
 
 namespace ClassLibrary
 {
     [Serializable]
-    class V2DataCollection : V2Data, IEnumerable<DataItem>
+    class V2DataCollection : V2Data, IEnumerable<DataItem>, INotifyCollectionChanged
     {
         public List<DataItem> dataItems { get; set; }
 
@@ -16,6 +17,8 @@ namespace ClassLibrary
             Info = info;
             Freq = freq;
         }
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         public void initRandom(int nItems, float xmax, float ymax, double minValue, double maxValue)
         {
@@ -117,6 +120,12 @@ namespace ClassLibrary
         IEnumerator IEnumerable.GetEnumerator()
         {
             return ((IEnumerable)dataItems).GetEnumerator();
+        }
+
+        void Add(DataItem item)
+        {
+            this.dataItems.Add(item);
+            CollectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add));
         }
     }
 }

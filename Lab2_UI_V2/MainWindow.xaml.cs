@@ -165,6 +165,11 @@ namespace Lab1_UI_V2
             }
         }
 
+        private void AddDataItem_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //private void Details(object sender, FilterEventArgs e)
         //{
         //    var selectedCollection = this.listBox_DataCollection.SelectedItems;
@@ -172,7 +177,7 @@ namespace Lab1_UI_V2
         //    selectedItems.AddRange(selectedCollection.Cast<V2Data>());
 
         //    var item = e.Item;
-            
+
         //    if (item != null)
         //    {
         //        if (item.GetType() == typeof(V2DataCollection)) e.Accepted = true;
