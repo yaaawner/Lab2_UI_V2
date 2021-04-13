@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -169,26 +170,5 @@ namespace Lab1_UI_V2
         {
 
         }
-
-        //private void Details(object sender, FilterEventArgs e)
-        //{
-        //    var selectedCollection = this.listBox_DataCollection.SelectedItems;
-        //    List<V2Data> selectedItems = new List<V2Data>();
-        //    selectedItems.AddRange(selectedCollection.Cast<V2Data>());
-
-        //    var item = e.Item;
-
-        //    if (item != null)
-        //    {
-        //        if (item.GetType() == typeof(V2DataCollection)) e.Accepted = true;
-        //        else e.Accepted = false;
-        //    }
-        //}
-
-        /*private void Average(object sender, FilterEventArgs args)
-        {
-
-        }
-        */
     }
 }

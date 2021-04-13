@@ -3,6 +3,9 @@ using System.Numerics;
 using System.Collections.Generic;
 using System.Collections;
 using System.Collections.Specialized;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleToAttribute("Lab2_UI_V2")]
 
 namespace ClassLibrary
 {
