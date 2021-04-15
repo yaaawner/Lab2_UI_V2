@@ -108,7 +108,7 @@ namespace Lab2_UI_V2
 
         public BindDataItem(ref V2DataCollection dataItems)
         {
-         
+            collection = dataItems;
         }
     }
 }
