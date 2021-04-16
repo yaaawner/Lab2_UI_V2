@@ -118,18 +118,30 @@
             <!--<Button Content="Button" HorizontalAlignment="Left" Margin="165,368,0,0" VerticalAlignment="Top"/>-->
             <Button Content="Open" Command="ApplicationCommands.Open" CommandParameter="From Button"/>
             <Button Content="Save" Command="ApplicationCommands.Save" CommandParameter="From Button"/>
-            <Button Content="Add Data Item" Command="{x:Static local:MainWindow.AddDataItem}" CommandParameter="From Button"/>
+            <Button Content="Add DataItem" Command="{x:Static local:MainWindow.AddDataItem}" CommandParameter="From Button"/>
             <Button Content="Remove" Command="ApplicationCommands.Delete" CommandParameter="From Button"/>
         </ToolBar>
         
-        <TextBox x:Name="TextBlock_X"
-                 Text="{Binding Path=X, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+        <TextBox x:Name="TextBox_X"
+                 Text="{Binding Path=BindDataItem.X, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                  HorizontalAlignment="Left" Margin="10,284,0,0" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"/>
-        
-        <TextBox HorizontalAlignment="Left" Margin="10,322,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,363,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,405,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox x:Name="TextBox_Y"
+                 Text="{Binding Path=BindDataItem.Y, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalAlignment="Left" Margin="10,322,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+
+        <TextBox x:Name="TextBox_Real"
+                 Text="{Binding Path=BindDataItem.Real, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalAlignment="Left" Margin="10,363,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox x:Name="TextBox_Imagine"
+                 Text="{Binding Path=BindDataItem.Imagine, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalAlignment="Left" Margin="10,405,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         
         
         <TextBlock HorizontalAlignment="Left" Margin="10,268,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top"/>

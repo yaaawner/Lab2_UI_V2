@@ -110,5 +110,16 @@ namespace Lab2_UI_V2
         {
             collection = dataItems;
         }
+
+        public void Add(float x, float y, float real, float imagine)
+        {
+            X = x;
+            Y = y;
+            Real = real;
+            Imagine = imagine;
+
+            collection.dataItems.Add(new DataItem(new System.Numerics.Vector2(x, y), 
+                                                  new System.Numerics.Complex(real, imagine)));
+        }
     }
 }

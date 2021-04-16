@@ -28,6 +28,7 @@ namespace Lab2_UI_V2
     {
         V2MainCollection mainCollection = new V2MainCollection();
         //TextBlock text = new TextBlock();
+        BindDataItem bind;
 
         public static RoutedCommand AddDataItem = new RoutedCommand("Add", typeof(Lab2_UI_V2.MainWindow));
 
@@ -243,12 +244,53 @@ namespace Lab2_UI_V2
 
         private void CanAddDataItemCommandHandler(object sender, CanExecuteRoutedEventArgs e)
         {
-            
+
+            V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_Main.SelectedItem;
+            if (selectedDataCollection != null)
+            {
+                bind = new BindDataItem(ref selectedDataCollection);
+            }  else
+            {
+                e.CanExecute = false;
+                return;
+            }
+
+
+            //this.listBox_DataCollection.SelectedItem
+            //bind = new BindDataItem(ref selectedDataCollection);
+
+            if (TextBox_X == null || TextBox_Y == null
+                || TextBox_Imagine == null || TextBox_Real == null)
+            {
+                e.CanExecute = false;
+        
+             } else if (Validation.GetHasError(TextBox_X) || Validation.GetHasError(TextBox_Y)
+                 || Validation.GetHasError(TextBox_Imagine) || Validation.GetHasError(TextBox_Real)) 
+             {
+                 e.CanExecute = false;
+             }
+            else
+                e.CanExecute = true;
+            //e.CanExecute = false;
+           
+
+
+
+
         }
 
         private void AddDataItemCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
-            
+            try
+            {
+                
+                bind.Add(float.Parse(TextBox_X.Text), float.Parse(TextBox_Y.Text),
+                         float.Parse(TextBox_Imagine.Text), float.Parse(TextBox_Real.Text));
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 }
