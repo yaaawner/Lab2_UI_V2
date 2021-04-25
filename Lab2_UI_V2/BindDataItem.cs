@@ -44,8 +44,9 @@ namespace Lab2_UI_V2
             set
             {
                 realValue = value;
-                OnPropertyChanged("Real");
+                //OnPropertyChanged("Real");
                 OnPropertyChanged("Imagine");
+                OnPropertyChanged("Real");
             }
         }
 
@@ -113,17 +114,26 @@ namespace Lab2_UI_V2
         public BindDataItem(ref V2DataCollection dataItems)
         {
             collection = dataItems;
+            /*
+            xCoord = yCoord = 0;
+            realValue = imagineValue = 1;
+            */
         }
 
         public void Add(float x, float y, float real, float imagine)
         {
+            /*
             X = x;
             Y = y;
             Real = real;
             Imagine = imagine;
-
+            */
             collection.dataItems.Add(new DataItem(new System.Numerics.Vector2(x, y), 
                                                   new System.Numerics.Complex(real, imagine)));
+            OnPropertyChanged("Imagine");
+            OnPropertyChanged("Real");
+            OnPropertyChanged("Y");
+            OnPropertyChanged("X");
         }
     }
 }

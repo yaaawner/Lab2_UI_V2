@@ -244,7 +244,7 @@ namespace Lab2_UI_V2
 
         private void CanAddDataItemCommandHandler(object sender, CanExecuteRoutedEventArgs e)
         {
-
+            /*
             V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_Main.SelectedItem;
             if (selectedDataCollection != null)
             {
@@ -254,6 +254,7 @@ namespace Lab2_UI_V2
                 e.CanExecute = false;
                 return;
             }
+            */
 
 
             //this.listBox_DataCollection.SelectedItem
@@ -290,6 +291,22 @@ namespace Lab2_UI_V2
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+
+        private void listBox_DataCollection_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            //V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_Main.SelectedItem;
+            if (listBox_DataCollection.SelectedItem as V2DataCollection != null)
+            {
+                V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_DataCollection.SelectedItem;
+                bind = new BindDataItem(ref selectedDataCollection);
+                TextBox_X.DataContext = bind;
+                TextBox_Y.DataContext = bind;
+                TextBox_Real.DataContext = bind;
+                TextBox_Imagine.DataContext = bind;
+                //DataItem_Value.DataContext = DataItemModel;
             }
         }
     }
