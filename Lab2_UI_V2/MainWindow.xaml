@@ -60,12 +60,12 @@
 
         <ListBox x:Name="listBox_Main"
                  ItemsSource="{Binding}"
-                 IsSynchronizedWithCurrentItem="True" SelectionChanged="listBox_Main_SelectionChanged"
+                 
                  Margin="265,24,0,0" Height="109" VerticalAlignment="Top" HorizontalAlignment="Left" Width="255"/>
 
         <ListBox x:Name="listBox_DataCollection" 
                  ItemsSource="{Binding Source={StaticResource key_view_DataCollection}}"
-                
+                 IsSynchronizedWithCurrentItem="True" SelectionChanged="listBox_DataCollection_SelectionChanged"
                  Margin="265,167,0,0" HorizontalAlignment="Left" Width="255" Height="107" VerticalAlignment="Top"/>
 
         <ListBox x:Name="listBox_DataOnGrid" 
