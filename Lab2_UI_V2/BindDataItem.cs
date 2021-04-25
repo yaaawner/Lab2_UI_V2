@@ -23,6 +23,7 @@ namespace Lab2_UI_V2
             get { return xCoord; }
             set { xCoord = value;
                 OnPropertyChanged("X");
+                OnPropertyChanged("Y");
             }
         }
 
@@ -33,6 +34,7 @@ namespace Lab2_UI_V2
             {
                 yCoord = value;
                 OnPropertyChanged("Y");
+                OnPropertyChanged("X");
             }
         }
 
@@ -43,6 +45,7 @@ namespace Lab2_UI_V2
             {
                 realValue = value;
                 OnPropertyChanged("Real");
+                OnPropertyChanged("Imagine");
             }
         }
 
@@ -53,6 +56,7 @@ namespace Lab2_UI_V2
             {
                 imagineValue = value;
                 OnPropertyChanged("Imagine");
+                OnPropertyChanged("Real");
             }
         }
 

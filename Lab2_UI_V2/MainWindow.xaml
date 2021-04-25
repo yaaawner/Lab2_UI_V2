@@ -123,23 +123,23 @@
         </ToolBar>
         
         <TextBox x:Name="TextBox_X"
-                 Text="{Binding Path=BindDataItem.X, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding Path=X, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                  HorizontalAlignment="Left" Margin="10,284,0,0" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"/>
 
         <TextBox x:Name="TextBox_Y"
-                 Text="{Binding Path=BindDataItem.Y, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding Path=Y, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                  HorizontalAlignment="Left" Margin="10,322,0,0" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
 
         <TextBox x:Name="TextBox_Real"
-                 Text="{Binding Path=BindDataItem.Real, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding Path=Real, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                  HorizontalAlignment="Left" Margin="10,363,0,0" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
         <TextBox x:Name="TextBox_Imagine"
-                 Text="{Binding Path=BindDataItem.Imagine, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding Path=Imagine, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                  HorizontalAlignment="Left" Margin="10,405,0,0" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         
