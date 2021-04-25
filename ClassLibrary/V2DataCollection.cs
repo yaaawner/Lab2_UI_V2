@@ -125,10 +125,10 @@ namespace ClassLibrary
             return ((IEnumerable)dataItems).GetEnumerator();
         }
 
-        void Add(DataItem item)
+        public void Add(DataItem item)
         {
             this.dataItems.Add(item);
-            CollectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add));
+            CollectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
     }
 }

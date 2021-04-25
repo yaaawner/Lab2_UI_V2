@@ -38,8 +38,6 @@ namespace Lab2_UI_V2
             InitializeComponent();
             DataContext = mainCollection;
             //text.Text = mainCollection.Average.ToString();
-
-
         }
 
         private void AddDef_btn_Click(object sender, RoutedEventArgs e)
@@ -244,7 +242,7 @@ namespace Lab2_UI_V2
 
         private void CanAddDataItemCommandHandler(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (listBox_DataCollection.SelectedItem as V2DataCollection == null)
+            if (listBox_Main.SelectedItem as V2DataCollection == null)
             {
              
                 e.CanExecute = false;
@@ -269,11 +267,6 @@ namespace Lab2_UI_V2
             else
                 e.CanExecute = true;
             //e.CanExecute = false;
-           
-
-
-
-
         }
 
         private void AddDataItemCommandHandler(object sender, ExecutedRoutedEventArgs e)
@@ -282,6 +275,7 @@ namespace Lab2_UI_V2
             {
                 
                 bind.Add();
+                //mainCollection.AddDataCollection();
             } 
             catch (Exception ex)
             {
@@ -293,9 +287,23 @@ namespace Lab2_UI_V2
         private void listBox_DataCollection_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             //V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_Main.SelectedItem;
-            if (listBox_DataCollection.SelectedItem as V2DataCollection != null)
+            if (listBox_Main.SelectedItem as V2DataCollection != null)
             {
-                V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_DataCollection.SelectedItem;
+                V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_Main.SelectedItem;
+                bind = new BindDataItem(ref selectedDataCollection);
+                TextBox_X.DataContext = bind;
+                TextBox_Y.DataContext = bind;
+                TextBox_Real.DataContext = bind;
+                TextBox_Imagine.DataContext = bind;
+            }
+        }
+
+        private void listBox_Main_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            //V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_Main.SelectedItem;
+            if (listBox_Main.SelectedItem as V2DataCollection != null)
+            {
+                V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_Main.SelectedItem;
                 bind = new BindDataItem(ref selectedDataCollection);
                 TextBox_X.DataContext = bind;
                 TextBox_Y.DataContext = bind;

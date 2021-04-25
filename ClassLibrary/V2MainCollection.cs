@@ -33,6 +33,11 @@ namespace ClassLibrary
             }
         }
 
+        public void AddDataCollection()
+        {
+            CollectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        }
+
         public void OnPropertyChanged(string prop = "")
         {
             if (PropertyChanged != null)
