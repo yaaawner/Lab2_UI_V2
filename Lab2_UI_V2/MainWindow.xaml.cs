@@ -244,21 +244,17 @@ namespace Lab2_UI_V2
 
         private void CanAddDataItemCommandHandler(object sender, CanExecuteRoutedEventArgs e)
         {
-            /*
-            V2DataCollection selectedDataCollection = (V2DataCollection)this.listBox_Main.SelectedItem;
-            if (selectedDataCollection != null)
+            if (listBox_DataCollection.SelectedItem as V2DataCollection == null)
             {
-                bind = new BindDataItem(ref selectedDataCollection);
-            }  else
-            {
+             
                 e.CanExecute = false;
                 return;
             }
-            */
+            
 
 
             //this.listBox_DataCollection.SelectedItem
-            //bind = new BindDataItem(ref selectedDataCollection);
+            
 
             if (TextBox_X == null || TextBox_Y == null
                 || TextBox_Imagine == null || TextBox_Real == null)
@@ -285,8 +281,7 @@ namespace Lab2_UI_V2
             try
             {
                 
-                bind.Add(float.Parse(TextBox_X.Text), float.Parse(TextBox_Y.Text),
-                         float.Parse(TextBox_Imagine.Text), float.Parse(TextBox_Real.Text));
+                bind.Add();
             } 
             catch (Exception ex)
             {
@@ -306,7 +301,6 @@ namespace Lab2_UI_V2
                 TextBox_Y.DataContext = bind;
                 TextBox_Real.DataContext = bind;
                 TextBox_Imagine.DataContext = bind;
-                //DataItem_Value.DataContext = DataItemModel;
             }
         }
     }

@@ -120,7 +120,7 @@ namespace Lab2_UI_V2
             */
         }
 
-        public void Add(float x, float y, float real, float imagine)
+        public void Add()
         {
             /*
             X = x;
@@ -128,8 +128,8 @@ namespace Lab2_UI_V2
             Real = real;
             Imagine = imagine;
             */
-            collection.dataItems.Add(new DataItem(new System.Numerics.Vector2(x, y), 
-                                                  new System.Numerics.Complex(real, imagine)));
+            collection.dataItems.Add(new DataItem(new System.Numerics.Vector2(X, Y), 
+                                                  new System.Numerics.Complex(Real, Imagine)));
             OnPropertyChanged("Imagine");
             OnPropertyChanged("Real");
             OnPropertyChanged("Y");
